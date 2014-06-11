@@ -17,8 +17,6 @@ $(TMP_FOLDER)$(LATEX_FILE).pdf: $(LATEX_FILE).tex $(LATEX_FILE).bib $(TEX_SUB_FI
 	cd $(TMP_FOLDER); $(BIB) $(LATEX_FILE)
 # Then run tex again
 	cd -; $(TEX) -output-directory=$(TMP_FOLDER) $(LATEX_FILE)
-# Then run tex one last time
-	$(TEX) -output-directory=$(TMP_FOLDER) $(LATEX_FILE)
 # Then copy the files where you want them
 	cp $(TMP_FOLDER)$(LATEX_FILE).pdf $(DOC_FOLDER)$(LATEX_FILE).pdf
 	cp $(TMP_FOLDER)$(LATEX_FILE).pdf .
